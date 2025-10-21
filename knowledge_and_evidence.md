@@ -53,7 +53,9 @@ Address the following tasks and questions based on the code provided in this rep
 3. Run the project locally by executing the `main.py` file
 4. Evidence this by providing screenshots of the project directory structure and the output of the `main.py` file
 
-![Local Execution (INSERT YOUR SCREENSHOT)](screenshots/CREATE_A_SCREENSHOT_OF_YOUR_local_setup.png)
+![Project Directory](screenshots/directory.jpg)
+![Happy Smiley Output](screenshots/happy-smiley-output.jpg)
+
 
 If you are running on a Raspberry Pi, you can use the following command to run the project and then screenshot the result:
 
@@ -70,50 +72,49 @@ python3 main.py
 
    | Type                    | name       | value          |
    | ----------              | ---------- | -------------- |
-   | built-in primitive type | _          |  _             |
-   | built-in composite type | _          |  _             |
-   | user-defined type       | _          |  _             |
+   | built-in primitive type | Y          |  (255, 255, 0) This is a tuple of ints representing the colour yellow             |
+   | built-in composite type | self.pixels          |  A list of 63 colour tuples (O, Y)             |
+   | user-defined type       | self.sense_hat          |  Instance of SenseHat()             |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
    | Object                   | Type                    |
    | ------------             | ----------------------- |
-   | self.pixels              | _                       |
-   | A member of self.pixels  | _                       |
-   | self                     | _                       |
+   | self.pixels              | List                       |
+   | A member of self.pixels  | Tuples (RGB colour)                       |
+   | self                     | Smiley (class instance)                       |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
    | Control Flow | File       | First line  | Line range  |
    | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   |  sequence    |  `smiley.py`         | `self.pixels = [O, Y, Y, ...]`           | 15-23           |
+   |  selection   |  `happy.py`         | `if wide_open:` inside `draw_eyes`          | 22-24           |
+   |  iteration   | `sad.py`          | `for pixel in mouth`           | 10-12           |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
    | Type                    | Used? | Example |
    | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
+   | int                     | Yes     | The pixels indexes in loops like the `for pixel in mouth` loop where `mouth = [41, 46, 50, 51, 52, 53] `         |
+   | float                   | Yes     | `delay=-0.25` in `blink(self, delay=0.25)`          |
+   | str                     | Yes     | `wide_open` as a parameter name          |
+   | bool                    | Yes     | `wide_open=True` in `draw_eyes(self, wide_open=True)`          |
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> Your answer here
->
+> In `smiley.py` a class variable would be `YELLOW = (255, 255, 0)`. This is because class variables are defined at the class level and shared across the class. That means that the value of `YELLOW` will be the same throughout every smiley object.  
+> A instance variable in `smiley.py` is anything inside the `__init__` method using `self.`. Example of this would be `self.pixels = [0, Y, Y, Y, ...]`. Each smiley object has its own copy of `self.pixels` so the pixelation can change depending on the instance. 
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   > Your answer here
-   >
+   > The constructor in the Happy class is in the `__init__` method. In general, constructors initialise a new object when it is created and prepares the object for use. In particular with the Happy class the constructor first calls `super().__init__()`, then `self.draw_mouth()`, then `self.draw_eyes()`
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-   > Your answer here
-   >
+   > It executes `super().__init__()` to run the Smiley constuctor which sets up the LED pixel grid and the SenseHat object. It then runs `self.draw_mouth()` which creates a smiling mouth and then it runs`self.draw_eyes()` which give it pixels for the open eyes. 
+   > The result is a fully initialised happy smiley face that is ready to be displayed on the SenseHat/mock LED grid. 
 
 ### 2.3. Code style
 
