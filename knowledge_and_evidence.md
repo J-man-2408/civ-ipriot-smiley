@@ -278,21 +278,21 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > There are three colours defined in the Smiley class. WHITE, GREEN, RED, YELLOW, and BLANK
+
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > The colours are stored as tuples representing the RGB values. Since they are a class variable their values, hardcoded and are shared across all smiley objects I would say they are not meant to change during execution. 
+
      3. Add the color blue to the appropriate class using the appropriate format and values.
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > The colour variables are used in the Eyes, Mouth and Head classes to set each part of the face to the colour. 
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
-
-
+     > The easiest (and wrongest) way to change the faces to green would be to change Yellow's tuple to (0, 255, 0).
 
   ### 3.2. Flexible Colors – Step 1
 
@@ -320,7 +320,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-  ![Bulk Rename](screenshots/bulk_rename.png)
+  ![Bulk Rename](screenshots/bulk-replace.jpg)
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 
