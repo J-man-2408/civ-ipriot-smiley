@@ -14,7 +14,7 @@ class Smiley:
         self.sense_hat = SenseHat()
         self.my_complexion = complexion
 
-        X = self.my_complexion
+        X = self.complexion()
         O = self.BLANK
         self.pixels = [
             O,X,X,X,X,X,X,O,

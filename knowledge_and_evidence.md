@@ -98,7 +98,7 @@ python3 main.py
    | ----------------------- | ------- | ----------------------------------------------- |
    | int                     | Yes     | The pixels indexes in loops like the `for pixel in mouth` loop where `mouth = [41, 46, 50, 51, 52, 53] `                              |
    | float                   | Yes     | `delay=-0.25` in `blink(self, delay=0.25)`      |
-   | str                     | Yes     | `wide_open` as a parameter name                 |
+   | str                     | Yes     | in the docstring in draw_eyes: `"""Draws open or closed eyes on a smiley"""`                 |
    | bool                    | Yes     | `wide_open=True` in `draw_eyes(self, wide_open=True)`                                                                      |
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
@@ -288,7 +288,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > The colour variables are used in the Eyes, Mouth and Head classes to set each part of the face to the colour. 
+        > The colour variables are used inside the Smiley class and any subclasses like Sad, Happy, Angry. They appear in methods where the pixels are modified such as `draw_eyes` and `draw_mouth`. They are also in the `Smiley.__init__` pixel grid where self.my_complexion and self.BLANK are assigned positions on the LED matrix. 
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!

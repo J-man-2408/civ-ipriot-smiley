@@ -27,7 +27,7 @@ class Sad(Smiley):
             if wide_open:
                 eyes = self.BLANK
             else:
-                eyes = self.my_complexion #Jasmine's change for the sad eyes to match the face 
+                eyes = self.complexion() #Jasmine's change for the sad eyes to match the face 
             self.pixels[pixel] = eyes
             
     def blink(self, delay=0.25):
